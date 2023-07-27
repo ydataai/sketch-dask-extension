@@ -456,4 +456,5 @@ xcuserdata/
 
 # Extra
 bin/
-VERSION
+*__version__
+*/__version__

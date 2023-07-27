@@ -37,7 +37,6 @@ classifiers = [
 dependencies = [
     "dask>=2023.6.0",
     "sketch>=0.4.2",
-    "packaging"
 ]
 dynamic = ["version"]
 
@@ -49,24 +48,17 @@ Home = "https://github.com/ydataai/sketch-dask-extension"
 
 [project.optional-dependencies]
 dev = [
-    "twine",
-    "build",
     "pylint==2.15.10",
     "black==22.8.0",
     "flake8==6.0.0",
     "isort==5.11.3",
     "pre-commit==2.20.0",
-    "pyc_wheel==1.2.7",
 ]
 
-[gh-actions]
-python =
-    3.8: py38
-    3.9: py39
-    3.10: py310
-    3.11: py311
-
-[testenv]
-deps= -rdev-requirements.txt
-commands = python -m pytest tests
-"""
+packaging = [
+    "packaging",
+    "twine",
+    "build",
+    "pyc_wheel",
+    "mypy",
+]
