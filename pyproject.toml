@@ -1,0 +1,72 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools>=67.4.0,<68.0.0",
+    "setuptools-scm>=7.1.0,<8.0.0",
+    "wheel>=0.38.4,<1.0.0",
+]
+
+[project]
+name="sketch-dask-extension"
+authors = [
+    {name = "YData", email = "opensource@ydata.ai"},
+]
+description="Extension to support Dask Dataframes on Sketch"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["data", "sketch", "model", "etl", "automatic", "join", "ai", "embedding", "profiling", "dask", "dataframe"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    'Development Status :: 5 - Production/Stable',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Education',
+    'Intended Audience :: End Users/Desktop',
+    'Intended Audience :: Financial and Insurance Industry',
+    'Intended Audience :: Healthcare Industry',
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Telecommunications Industry',
+    'Operating System :: POSIX :: Linux',
+    'Operating System :: MacOS',
+    'Operating System :: Microsoft :: Windows',
+    'Programming Language :: Python :: 3 :: Only',
+    'Programming Language :: Python :: Implementation',
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+    'Topic :: Software Development',
+    'Topic :: Software Development :: Libraries :: Python Modules'
+]
+dependencies = [
+    "dask>=2023.6.0",
+    "sketch>=0.4.2",
+    "packaging"
+]
+dynamic = ["version"]
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+Home = "https://github.com/ydataai/sketch-dask-extension"
+
+[project.optional-dependencies]
+dev = [
+    "twine",
+    "build",
+    "pylint==2.15.10",
+    "black==22.8.0",
+    "flake8==6.0.0",
+    "isort==5.11.3",
+    "pre-commit==2.20.0",
+    "pyc_wheel==1.2.7",
+]
+
+[gh-actions]
+python =
+    3.8: py38
+    3.9: py39
+    3.10: py310
+    3.11: py311
+
+[testenv]
+deps= -rdev-requirements.txt
+commands = python -m pytest tests
+"""
