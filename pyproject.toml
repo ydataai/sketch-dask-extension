@@ -35,7 +35,7 @@ classifiers = [
     'Topic :: Software Development :: Libraries :: Python Modules'
 ]
 dependencies = [
-    "dask>=2023.6.0",
+    "dask>=2023.5.0",
     "sketch>=0.4.2",
 ]
 dynamic = ["version"]
