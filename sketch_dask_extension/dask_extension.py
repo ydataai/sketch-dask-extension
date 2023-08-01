@@ -2,15 +2,13 @@ import os
 import uuid
 
 import dask.dataframe as dd
+import lambdaprompt
 import numpy as np
 import requests
 from IPython.display import HTML, display
-
-import lambdaprompt
 from sketch import Portfolio
-
-from sketch.pandas_extension import retrieve_name, strtobool, string_repr_truncated, to_b64, ask_from_parts, \
-  howto_from_parts, validate_pycode_result
+from sketch.pandas_extension import (ask_from_parts, howto_from_parts, retrieve_name, string_repr_truncated, strtobool,
+                                     to_b64, validate_pycode_result)
 
 
 def get_parts_from_df(df: dd.DataFrame, useSketches=False):
@@ -76,7 +74,7 @@ Consider setting SKETCH_USE_REMOTE_LAMBDAPROMPT=False
 and run with your own open-ai key
 """
             )
-            text_to_copy = f"SKETCH ERROR - see print logs for full error"
+            text_to_copy = "SKETCH ERROR - see print logs for full error"
     else:
         # using local version
         text_to_copy = prompt(**prompt_kwargs)
