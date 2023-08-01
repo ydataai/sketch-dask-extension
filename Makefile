@@ -18,14 +18,14 @@ clean: clean-pyi ### Cleans artifacts
 clean-pyi: ### Clean python compiled interface files
 	find . -name "*.pyi" -delete
 
-install-build-deps:
-	$(PIP) install .[packaging]
-
 install-deps:
 	$(PIP) install .
 
-install-dev-deps:
+install-deps-dev:
 	$(PIP) install .[dev]
+
+install-deps-packaging:
+	$(PIP) install .[packaging]
 
 install-all:
 	$(PIP) install .[dev,packaging]

@@ -56,8 +56,6 @@ dev = [
 ]
 
 packaging = [
-    "packaging",
-    "twine",
     "build",
     "pyc_wheel",
     "mypy",
