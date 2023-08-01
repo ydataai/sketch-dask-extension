@@ -35,6 +35,7 @@ define BUILD
 	echo version = \"$(version)\" > $1/__version__.py && \
 	stubgen . --export-less && \
 	$(PYTHON) -m build --wheel
+	twine check dist/*
 endef
 
 define UPLOAD

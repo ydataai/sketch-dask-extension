@@ -36,7 +36,7 @@ jobs:
         make install-deps-packaging
 
     - name:  Build package
-      run: make package version=${{ github.ref_name }}
+      run: make build version=${{ github.ref_name }}
 
     - name: Upload Pipeline Artifacts
       uses: actions/upload-artifact@v3
