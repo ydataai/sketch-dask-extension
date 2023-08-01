@@ -1,10 +1,10 @@
 include *.txt
 include *.md
 
-excluse .editorconfig
-excluse .flake8
+exclude .editorconfig
+exclude .flake8
 exclude .gitignore
-excluse .pre-commit-config.yaml
+exclude .pre-commit-config.yaml
 exclude .releaserc.json
 exclude Makefile
-excluse renovate.json
+exclude renovate.json

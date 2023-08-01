@@ -33,7 +33,7 @@ install-all:
 define BUILD
 	find . -name "*.pyi" -delete && rm -rf build dist && \
 	echo version = \"$(version)\" > $1/__version__.py && \
-	stubgen . --export-less && \
+	stubgen . -o . --export-less && \
 	$(PYTHON) -m build --wheel
 	twine check dist/*
 endef
@@ -44,13 +44,13 @@ endef
 
 define WHEEL
 	cd dist && \
-	mv $(subst -,_,$1)-$(version)-py3-none-any.whl $(subst -,_,$1)-$(version)-py$(PYV)-none-any.whl && \
-	$(PYTHON) -m pyc_wheel $(subst -,_,$1)-$(version)-py$(PYV)-none-any.whl --exclude "__version__.py" && \
+	mv $1-$(version)-py3-none-any.whl $1-$(version)-py$(PYV)-none-any.whl && \
+	$(PYTHON) -m pyc_wheel $1-$(version)-py$(PYV)-none-any.whl --exclude "__version__.py" && \
 	twine check *
 endef
 
 build:
-	$(call BUILD,sketch-dask-extension)
+	$(call BUILD,sketch_dask_extension)
 
 lint:
 	pre-commit run --all-files
@@ -59,4 +59,4 @@ upload:
 	$(call UPLOAD)
 
 wheel:
-	$(call WHEEL,sketch-dask-extension)
+	$(call WHEEL,sketch_dask_extension)

@@ -61,3 +61,6 @@ packaging = [
     "pyc_wheel",
     "mypy",
 ]
+
+[tool.setuptools.dynamic]
+version = { attr = "sketch_dask_extension.__version__" }
