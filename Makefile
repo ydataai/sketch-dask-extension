@@ -27,6 +27,9 @@ install-deps:
 install-dev-deps:
 	$(PIP) install .[dev]
 
+install-all:
+	$(PIP) install .[dev,packaging]
+
 define BUILD
 	find . -name "*.pyi" -delete && rm -rf build dist && \
 	echo version = \"$(version)\" > $1/__version__.py && \
