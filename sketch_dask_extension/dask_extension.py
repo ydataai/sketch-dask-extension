@@ -74,7 +74,7 @@ Consider setting SKETCH_USE_REMOTE_LAMBDAPROMPT=False
 and run with your own open-ai key
 """
             )
-            text_to_copy = f"SKETCH ERROR - see print logs for full error"
+            text_to_copy = "SKETCH ERROR - see print logs for full error"
     else:
         # using local version
         text_to_copy = prompt(**prompt_kwargs)
