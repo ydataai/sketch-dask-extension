@@ -2,7 +2,7 @@
 [![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/mw7xjJ7b7s)
 
 [![pypi](https://img.shields.io/pypi/v/sketch-dask-extension)](https://pypi.org/project/sketch-dask-extension)
-![Pythonversion](https://img.shields.io/badge/python-3.10-blue)
+![Pythonversion](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue)
 [![downloads](https://pepy.tech/badge/sketch-dask-extension/month)](https://pepy.tech/project/sketch-dask-extension)
 
 
@@ -20,10 +20,10 @@ python -m pip install sketch-dask-extension
 ## How to use
 
 ```python
-import dask
+from dask.dataframe import read_csv
 import sketch-dask-extension
 
-dataframe = dask.read_csv('...')
+dataframe = read_csv('...')
 
 dataframe.sketch.ask('tell me something interesting')
 ```
