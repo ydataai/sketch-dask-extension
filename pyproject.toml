@@ -51,7 +51,7 @@ dev = [
     "pylint==2.15.10",
     "black==22.8.0",
     "flake8==6.0.0",
-    "isort==5.11.3",
+    "isort==5.13.2",
     "pre-commit==2.20.0",
 ]
 
